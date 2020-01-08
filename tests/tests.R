@@ -1,3 +1,8 @@
-# library(testthat)
+library(testthat)
+library(magrittr)
+library(farstest)
 
-# testthat::expect_that(farstest::make_filename(2018), testthat::equals("accident_2018.csv.bz2"))
+testthat::expect_that(farstest::make_filename(2013) %>%
+                        farstest::fars_read() %>%
+                        nrow(),
+                      testthat::equals(30202))
