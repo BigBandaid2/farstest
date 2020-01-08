@@ -13,5 +13,14 @@ fars_summarize_years(years)
 summary table showing the count of measurements per month and year
 }
 \description{
-Collect and summarize data over multiple years
+This function collects data from multiple years and summarizes
+}
+\examples{
+library(magrittr)
+c(2013,2014) \%>\%
+  fars_summarize_years() \%>\%
+  plot()
+}
+\seealso{
+\link{fars_read_years}
 }

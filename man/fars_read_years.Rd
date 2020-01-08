@@ -10,8 +10,17 @@ fars_read_years(years)
 \item{years}{a vector of years}
 }
 \value{
-returns a list of data.frames, one data.frame for each year. Will provide a NULL value and error message for any year where no corresponding file can be found
+returns a list of data.frames, one data.frame for each year.
+  Will provide a NULL value and error message for any year where no corresponding file can be found
 }
 \description{
-Read all files that correspond to a vector of years
+A helper function for reading mulitple FARS files simultaneously
+}
+\examples{
+library(magrittr)
+c(2014,2015,2016) \%>\%
+  fars_read_years()
+}
+\seealso{
+\link{fars_read}
 }

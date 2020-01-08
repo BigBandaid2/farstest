@@ -13,5 +13,27 @@ fars_read(filename)
 returns a dataframe of the loaded data
 }
 \description{
-This function reads the raw data out and returns a data.frame
+This function reads the raw data out from a .csv file and returns a data.frame.
+The raw data file is provided by the \strong{US National Highway Traffic Safety Administration's}
+\emph{Fatality Analysis Reporting System} (FARS)
+}
+\details{
+Additional information about FARS is available at the following reference links:
+\itemize{
+  \item{\url{https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars}}
+}
+}
+\note{
+To generate file name use: \code{\link{make_filename}}
+}
+\examples{
+library(magrittr)
+yr <- 2015
+data <- yr \%>\%
+  make_filename \%>\%
+  fars_read
+head(data)
+}
+\seealso{
+\link{make_filename}
 }

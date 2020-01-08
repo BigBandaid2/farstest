@@ -2,19 +2,23 @@
 % Please edit documentation in R/fars_functions.R
 \name{make_filename}
 \alias{make_filename}
-\title{This builds the name of the file based on the year}
+\title{Builds the name of the file based on the year}
 \usage{
 make_filename(year)
 }
 \arguments{
-\item{year}{integer}
+\item{year}{a string or integer representing a 4 digit year.}
 }
 \value{
-returns a filename concatenating "accident_" with the year and file extensions
+returns a filename concatenating "accident_" with the year and file extensions.
 }
 \description{
-This builds the name of the file based on the year
+This function converts a simple \code{year} into the name format of a FARS .csv file.
+It does not check whether that file is available.
 }
 \examples{
-make_filename(2019)
+make_filename(2013)
+}
+\seealso{
+\link{fars_read}
 }
